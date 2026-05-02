@@ -86,6 +86,8 @@ end
 --- @return table? recipe If ret=true, then the recipe table is returned
 function module.qtech(_name,_counter,_levels,_opts)
     local _prerequisites, _time, _order, _add, _effectv, _effecttypes, _preicons, _tint, _return = _opts.pre, _opts.time, _opts.order, _opts.add, _opts.eff, _opts.efft, _opts.pi, _opts.t, _opts.ret
+    if _preicons==nil then _preicons={"__core__/graphics/empty.png",1} end
+    if _effectv==nil then _effectv={"_"} end
     if _time==nil then _time=30 end
     if _order==nil then _order= const.baseorder end
     if _return == nil then _return = false end
