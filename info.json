@@ -1,0 +1,13 @@
+	{
+	"name": "klib",
+	"version": "1.0.0",
+	"title": "Kabury's lib",
+	"author": "Kabury",
+	"contact": "",
+	"homepage": "",
+	"dependencies": [
+		"base >= 2.0"
+	],
+	"description": "A library mod, does nothing alone. Mainly shorthands",
+	"factorio_version": "2.0"
+}
