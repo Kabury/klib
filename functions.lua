@@ -11,6 +11,7 @@ local const = require("constants")
 ---@field rt string "type-name-amounts" / "names-and-amount" / "names"
 ---@field it string "type-name-amounts" / "names-and-amount" / "names"
 ---@field ret boolean Whether it gives you the table OR it just data:extends instead
+---@field ico icons Pass to icons
 
 --- Shorthand to make recipes.
 ---
@@ -28,7 +29,7 @@ local const = require("constants")
 --- @return table? recipe If ret=true, then the recipe table is returned
 function module.qrecipe(_name,_ingredients,_results,_opts)
     if _opts == nil then _opts = {} end
-    local _energy, _category, _enabled, _resulttype, _ingredienttype, _return = _opts.en, _opts.cat, _opts.enabled, _opts.rt, _opts.it, _opts.ret
+    local _energy, _category, _enabled, _resulttype, _ingredienttype, _return, _icons = _opts.en, _opts.cat, _opts.enabled, _opts.rt, _opts.it, _opts.ret, _opts.ico
     if _ingredienttype == nil then _ingredienttype = "name-and-amount" end
     if _resulttype == nil then _resulttype = "names" end
     if _results == nil then _results = {_name} end
@@ -46,7 +47,8 @@ function module.qrecipe(_name,_ingredients,_results,_opts)
         ingredients=_fingredient,
         results=_fresult,
         category=_category,
-        energy_required=_energy
+        energy_required=_energy,
+        icons=_icons
     }
 
     if _return then
